@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
-    <head></head>
+    <head>
+        <title>CSV to JSON</title>
+    </head>
     <body>
         <h1>
             CSV to JSON Converter
         </h1>
-        <form action="/csv-to-json">
+        <form action="/csv-to-json" id="csv-form" method="post">
+            <label for="file-upload">Upload CSV File</label>
             <input type="file" id="csvUpload" name="filename">
-            <input type="submit">
+            <button type="submit">Upload</button>
         </form>
+
+        <script src="static/index.js"></script>
     </body>
 
 </html>

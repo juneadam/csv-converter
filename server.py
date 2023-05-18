@@ -21,15 +21,19 @@ app.jinja_env.undefined = jinja2.StrictUndefined
 app.config['PRESERVE_CONTEXT_ON_EXCEPTION'] = True
 
 
-@app.route("/")
+@app.route('/')
 def index():
     """Return homepage."""
 
     return render_template("index.html")
 
+@app.route('/csv-to-json')
+def convert_CSV_to_JSON():
+    """Convert the uploaded CSV file into a JSON file."""
+
+    raise NotImplementedError("Functionality incomplete.")
+
 
 
 if __name__ == "__main__":
-    # from model import connect_to_db
-    # connect_to_db(app)
-    app.run(host="0.0.0.0", debug=True)
+    app.run(host="0.0.0.0", debug=True, port=4000)
