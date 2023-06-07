@@ -1,16 +1,28 @@
-const csvForm = document.querySelector('csv-form');
-csvForm.addEventListener('submit', handleSubmit);
+const csvForm = document.querySelector("#csv-form");
 
-// /** @param {Event} event */
+/** @param {Event} event */
 const handleSubmit = (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const form = event.currentTarget
-    const url = new URL(form.action)
-    const fetchOptions = {
-        method: form.method,
-        body: FormData,
-    }
+  const form = event.currentTarget;
+    console.log(form)
 
-    fetch(url, fetchOptions)
-}
+  const file = document.querySelector('#csvUpload')
+  console.log(file)
+
+  const url = new URL(form.action);
+  const formData = new FormData(form);
+
+  console.log(formData)
+
+  const fetchOptions = {
+    method: form.method,
+    body: formData,
+  };
+
+  console.log(fetchOptions);
+
+  fetch(url, fetchOptions);
+};
+
+csvForm.addEventListener("submit", handleSubmit);
